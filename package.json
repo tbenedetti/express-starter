@@ -1,0 +1,35 @@
+{
+  "name": "express-ops",
+  "version": "0.0.1",
+  "description": "An operations friendly express js starter template",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha test --recursive",
+    "dev": "export NODE_ENV=local; nodemon server.js | node_modules/bunyan/bin/bunyan",
+    "profile": "export NODE_ENV=local; node --prof server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "anthony.benedetti",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/tbenedetti/express-ops/issues"
+  },
+  "homepage": "https://github.com/tbenedetti/express-ops#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "bunyan": "1.8.5",
+    "compression": "1.6.2",
+    "cors": "^2.8.1",
+    "express": "4.14.1",
+    "express-metrics": "^1.1.0",
+    "helmet": "3.4.0",
+    "uuid": "3.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  }
+}
