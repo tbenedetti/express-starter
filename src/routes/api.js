@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
-const express = require('express'),
-    router  = express.Router(),
-    ApiError = require('../errors/apiError'),
-    ApiUtils = require('../utils/apiUtils')
-    ;
+const express = require('express');
+const ApiError = require("../errors/api-error");
+const router = express.Router();
 
+router.get('/api/greeting', (req, res) => res.json({ greeting: 'hi' }));
 
-router.get(ApiUtils.API_PATH + '/hello', (req, res) => res.send({ greeting: 'hi' }));
-
-router.get(ApiUtils.API_PATH + '/errors', (req, res) => {
-    throw ApiError.badRequest('This should be caught and formatted');
+router.get('/api/errors', (req, res) => {
+    throw ApiError.badRequest({
+        id: req.id,
+        messages: ["Should be caught and formatted", "Should have an id"]
+    });
 });
 
 module.exports = router;
